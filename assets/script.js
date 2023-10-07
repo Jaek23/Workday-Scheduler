@@ -1,24 +1,25 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-var saveButton = document.querySelector(".btn")
-var textAreaEl =document.querySelector(".description");
+var saveButton = $(".btn")
+var textAreaEl =$(".description");
 
-
-
-  document.getElementById("container").addEventListener("click", function(e){
-    if(e.target == "button"){
-      var todoInput = document.querySelectorAll(".description").value;
-      localStorage.setItem("todo", todoInput);
-    }
-  })
-
-function rendertextInput(){
-  var todoText = localStorage.getItem('todoList');
-  textAreaEl.textContent = todoText;
-}
-
-rendertextInput()
+$(document).ready(function(){
+  $(".btn").on("click", function(){
+    var time = $(this).closest(".time-block").attr("id");
+    var value = $(this).siblings(".description").val();
+    localStorage.setItem(time, value);
+  });
+  $('#hour-9 .description').val(localStorage.getItem('hour-9'))
+  $('#hour-10 .description').val(localStorage.getItem('hour-10'))
+  $('#hour-11 .description').val(localStorage.getItem('hour-11'))
+  $('#hour-12 .description').val(localStorage.getItem('hour-12'))
+  $('#hour-13 .description').val(localStorage.getItem('hour-13'))
+  $('#hour-14 .description').val(localStorage.getItem('hour-14'))
+  $('#hour-15 .description').val(localStorage.getItem('hour-15'))
+  $('#hour-16 .description').val(localStorage.getItem('hour-16'))
+  $('#hour-17 .description').val(localStorage.getItem('hour-17'))
+});
 
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
