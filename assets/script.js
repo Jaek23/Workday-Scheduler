@@ -4,11 +4,13 @@
 var saveButton = document.querySelector(".btn")
 var textAreaEl =document.querySelector(".description");
 
-$(function () {
-  
-  saveButton.addEventListener("click", function(){
-    var todoInput =document.querySelector(".description").value;
-    localStorage.setItem("todoList", todoInput);
+
+
+  document.getElementById("container").addEventListener("click", function(e){
+    if(e.target == "button"){
+      var todoInput = document.querySelectorAll(".description").value;
+      localStorage.setItem("todo", todoInput);
+    }
   })
 
 function rendertextInput(){
@@ -40,6 +42,5 @@ rendertextInput()
   var hour = date.getHours();
   var currentDate = dayjs();
   $('#currentDay').text(currentDate.format('dddd, MMMM D, YYYY'));
-});
 
 
