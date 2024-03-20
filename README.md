@@ -17,7 +17,7 @@ Please refer to the license in the repo.
 ![workdaycalendar](https://github.com/Jaek23/module-challenge-5/assets/141678374/b89ae065-1b32-4bff-9be6-6a6dcc2e2779)
 
 ## Link to deployed Webpage 
-https://jaek23.github.io/module-challenge-5/
+https://jaek23.github.io/Workday-Scheduler/
 
 
 
